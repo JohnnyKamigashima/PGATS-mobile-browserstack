@@ -4,6 +4,13 @@ name: 'Execucao por push'
 # Gatilho de execução por push ao repositorio
 on: push
 
+env:
+    BROWSERSTACK_USERNAME: ${{ secrets.BS_USER }}
+    BROWSERSTACK_ACCESS_KEY: ${{ secrets.BS_ACCESS_KEY }}
+    BROWSERSTACK_APP: ${{ vars.BS_APP }}
+    LOJINHA_APP_PASS: ${{ secrets.LOJINHA_APP_PASS }}
+    LOJINHA_APP_USER: ${{ secrets.LOJINHA_APP_USER }}
+
 jobs:
   # - baixar as dependencias
   # - compilar
@@ -22,12 +29,6 @@ jobs:
         run: yarn
 
       - name: Testes e2e Lojinha app
-        env:
-            BROWSERSTACK_USERNAME: ${{ secrets.BS_USERNAME }}
-            BROWSERSTACK_ACCESS_KEY: ${{ secrets.BS_ACCESS_KEY }}
-            BROWSERSTACK_APP: ${{ vars.BS_APP }}
-            LOJINHA_APP_PASS: ${{ secrets.LOJINHA_APP_PASS }}
-            LOJINHA_APP_USER: ${{ secrets.LOJINHA_APP_USER }}
         run: |
               echo "BROWSERSTACK_USERNAME: $BROWSERSTACK_USERNAME"
               echo "BROWSERSTACK_ACCESS_KEY: $BROWSERSTACK_ACCESS_KEY"
