@@ -8,6 +8,8 @@ describe('Acessa lojinha app android', () => {
 
         const loginPage = new LoginPage()
 
+        console.log(`insformações de login: ${user}, ${password}, e de browserstack app: ${process.env.BS_APP}, ${process.env.BS_USERNAME}, ${process.env.BS_ACCESS_KEY}`)
+
         await (
             await loginPage
                 .loginLojinha(user, password))
