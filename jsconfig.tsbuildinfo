@@ -1,0 +1,1 @@
+{"root":["./babel.config.js","./wdio.bs.conf.js","./test/pageobjects/login.page.js","./test/pageobjects/products.page.js","./test/specs/loginlojinha.e2e.js"],"version":"5.6.3"}

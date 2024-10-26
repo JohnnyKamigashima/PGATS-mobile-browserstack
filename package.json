@@ -18,6 +18,9 @@
     "ts-node": "^10.9.2"
   },
   "scripts": {
+    "lint": "npm run lint:ts && npm run lint:format",
+    "lint:ts": "tsc -b jsconfig.json",
+    "lint:format": "prettier --check --ignore-path .gitignore .",
     "wdio": "wdio run ./wdio.conf.js",
     "bs": "wdio run ./wdio.bs.conf.js",
     "allure-bs": "allure serve ./report/android/bs/",

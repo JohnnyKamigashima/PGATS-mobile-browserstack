@@ -4,13 +4,6 @@ name: "Execucao por push"
 # Gatilho de execução por push ao repositorio
 on: push
 
-env:
-  BROWSERSTACK_USERNAME: ${{ secrets.BS_USER }}
-  BROWSERSTACK_ACCESS_KEY: ${{ secrets.BS_ACCESS_KEY }}
-  BROWSERSTACK_APP: ${{ vars.BS_APP }}
-  LOJINHA_APP_PASS: ${{ secrets.LOJINHA_APP_PASS }}
-  LOJINHA_APP_USER: ${{ secrets.LOJINHA_APP_USER }}
-
 jobs:
   # - baixar as dependencias
   # - compilar
@@ -35,9 +28,26 @@ jobs:
       - name: Padronização de codigo
         run: yarn lint
 
-  wdioBrowserstack:
+  allureServ:
     runs-on: ubuntu-latest
     needs: [inspection]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalando Yarn
+        run: npm install -g yarn
+      - name: Instalando dependências
+        run: yarn run allure-bs &
+
+  wdioBrowserstack:
+    runs-on: ubuntu-latest
+    needs: [allureServ]
+
+    env:
+      BROWSERSTACK_USERNAME: ${{ secrets.BS_USER }}
+      BROWSERSTACK_ACCESS_KEY: ${{ secrets.BS_ACCESS_KEY }}
+      BROWSERSTACK_APP: ${{ vars.BS_APP }}
+      LOJINHA_APP_PASS: ${{ secrets.LOJINHA_APP_PASS }}
+      LOJINHA_APP_USER: ${{ secrets.LOJINHA_APP_USER }}
 
     steps:
       - uses: actions/checkout@v4
@@ -56,4 +66,4 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: relatorio-de-testes
-          path: ./report/android/bs
+          path: ./report
