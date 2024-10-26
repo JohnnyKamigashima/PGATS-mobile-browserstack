@@ -1,3 +1,9 @@
+---
+runme:
+  id: 01JB5AEW5NRVTWJDYPYBB7C3ZB
+  version: v3
+---
+
 # PGATS Mobile Browserstack
 
 ### Trabalho de Conclusão de Disciplina com CI - GitHub Actions
@@ -5,6 +11,7 @@
 ### Professor Samuel Lucas
 
 Este projeto realizado em aula utiliza estrutura de PageObjects com o framework do WebdriverIO com Appium e execução na nuvem no BrowserStack para realizar um teste automatizado no APK da lojinha.  
+Senhas e acessos configurados no repositório do GitHub utilizando secrets e variáveis globais.
 O resultado é gravado como artefato na pasta android e pode ser visualizado baixando os artefatos para a pasta report e usando o comando
 
 `yarn run allure-bs`
