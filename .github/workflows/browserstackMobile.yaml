@@ -1,0 +1,32 @@
+# CI de Nível 01 - Disparo dentro do fluxo de CI de desenvolvimento
+name: 'Execucao por push'
+# triggers ou gatilhos de execucao
+# Gatilho de execução por push ao repositorio
+on: push
+
+jobs:
+  # - baixar as dependencias
+  # - compilar
+  # - testar
+
+  wdioBrowserstack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalando Yarn
+        run: npm install -g yarn
+
+      - name: Instalando dependências
+        run: yarn
+
+      - name: Testes e2e Lojinha app
+        run: yarn run bs
+
+      - uses: actions/upload-artifact@v4
+        # por padrao a pipeline cancela se houver erro para evitar que ele cancele o passo seguinte no caso de erro, se quiser que a pipeline continue, basta adicionar o parametro 'if: ${{ !cancelled() }}'
+        if: ${{ !cancelled() }}
+        with:
+          name: relatorio-de-testes
+          path: ./report/android/bs
