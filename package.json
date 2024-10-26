@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "appium": "^2.5.4",
-    "webdriverio": "^8.36.1"
+    "webdriverio": "^8.36.1",
+    "yarn": "^1.22.22"
   }
 }
