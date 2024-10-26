@@ -1,5 +1,5 @@
 # CI de Nível 01 - Disparo dentro do fluxo de CI de desenvolvimento
-name: "Execucao por push"
+name: 'Execucao por push'
 # triggers ou gatilhos de execucao
 # Gatilho de execução por push ao repositorio
 on: push

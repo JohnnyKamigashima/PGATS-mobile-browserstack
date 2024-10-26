@@ -1,5 +1,5 @@
-import { $ } from "@wdio/globals";
-import ProductsPage from "./products.page.js";
+import { $ } from '@wdio/globals';
+import ProductsPage from './products.page.js';
 
 export default class LoginPage {
   get user() {

@@ -1,4 +1,4 @@
-import { $ } from "@wdio/globals";
+import { $ } from '@wdio/globals';
 
 export default class ProductsPage {
   get productList() {
