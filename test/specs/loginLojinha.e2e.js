@@ -1,4 +1,5 @@
-import LoginPage from '../pageobjects/login.page.js'
+import LoginPage from "../pageobjects/login.page.js"
+
 const user = process.env.LOJINHA_APP_USER
 const password = process.env.LOJINHA_APP_PASS
 

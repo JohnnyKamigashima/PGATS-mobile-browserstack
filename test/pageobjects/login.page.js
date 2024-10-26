@@ -1,5 +1,5 @@
 import { $ } from '@wdio/globals'
-import ProductsPage from './products.page'
+import ProductsPage from './products.page.js'
 
 export default class LoginPage {
 
@@ -7,7 +7,7 @@ export default class LoginPage {
     get password() { return $('//android.view.View[@text="Senha"]/../android.widget.EditText') }
     get enterButton() { return $('android=new UiSelector().text("ENTRAR")') }
 
-    async entrarButton() {
+    async cliclEnterButton() {
         await this.enterButton.click()
     }
 
@@ -24,7 +24,7 @@ export default class LoginPage {
             this.fillUser(usuario),
             this.fillPassword(senha)
         ])
-        await this.enterButton()
+        await this.cliclEnterButton()
         return new ProductsPage()
     }
 }

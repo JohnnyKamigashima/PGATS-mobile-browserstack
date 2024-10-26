@@ -3,3 +3,4 @@ node_modules
 report
 logs
 app
+yarn.lock
