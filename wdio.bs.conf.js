@@ -16,7 +16,14 @@ export const config = {
                 app: process.env.BROWSERSTACK_APP,
                 buildIdentifier: "${BUILD_NUMBER}",
                 browserstackLocal: true
-            },
+            }, {
+                testObservability: true,
+                testObservabilityOptions: {
+                    projectName: "Entrega projeto de CI com wdio",
+                    buildName: "0.0.1", // Adicione esta linha
+                    buildIdentifier: "#${BUILD_NUMBER}" // Opcional, mas recomendado
+                }
+            }
         ]
     ],
     capabilities: [{
