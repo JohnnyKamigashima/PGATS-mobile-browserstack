@@ -1,7 +1,7 @@
 {
   "name": "PGATS_Automacao_Mobile_BrowserStack",
-    "version": "0.0.1",
-    "license": "MIT",
+  "version": "0.0.1",
+  "license": "MIT",
   "type": "module",
   "devDependencies": {
     "@babel/core": "^7.24.5",
