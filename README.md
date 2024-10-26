@@ -35,3 +35,6 @@ https://app-automate.browserstack.com/builds/1c3898cb44cddd52100df9a00e34c20a609
 
 https://github.com/user-attachments/assets/bd22b5de-4fa2-49f3-92e6-135840ec43a7
 
+As variaveis de ambiente foram configuradas no proprio GitHub:
+
+![image](https://github.com/user-attachments/assets/386daae3-ca66-4083-86e3-13c11f8445e3)
