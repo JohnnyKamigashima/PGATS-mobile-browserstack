@@ -22,6 +22,13 @@ jobs:
         run: yarn
 
       - name: Testes e2e Lojinha app
+        env:
+            BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+            BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+            BROWSERSTACK_APP: ${{ vars.BROWSERSTACK_APP }}
+            LOJINHA_APP_PASS: ${{ secrets.LOJINHA_APP_PASS }}
+            LOJINHA_APP_USER: ${{ secrets.LOJINHA_APP_USER }}
+
         run: yarn run bs
 
       - uses: actions/upload-artifact@v4
